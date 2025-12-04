@@ -59,6 +59,11 @@ app.post('/thread/:threadId/reply', (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Tieba clone running at http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Tieba clone running at http://localhost:${PORT}`);
+  });
+} else {
+  // When required as a module (for serverless platforms like Vercel), export the app
+  module.exports = app;
+}

@@ -1,0 +1,26 @@
+<%- include('layout', { title: thread.title }) %>
+
+<section>
+  <h2><%= thread.title %></h2>
+  <div class="post">
+    <div class="meta">作者：<%= thread.author %> • <%= new Date(thread.createdAt).toLocaleString() %></div>
+    <div class="content"><%= thread.content %></div>
+  </div>
+
+  <h3>回复 (<%= thread.replies.length %>)</h3>
+  <ul class="replies">
+    <% thread.replies.forEach(function(r){ %>
+      <li>
+        <div class="meta"><%= r.author %> • <%= new Date(r.createdAt).toLocaleString() %></div>
+        <div class="content"><%= r.content %></div>
+      </li>
+    <% }) %>
+  </ul>
+
+  <h3>回复帖子</h3>
+  <form method="post" action="/thread/<%= thread.id %>/reply">
+    <p><input type="text" name="author" placeholder="称呼（可选）"></p>
+    <p><textarea name="content" rows="4" placeholder="写下你的回复..."></textarea></p>
+    <p><button type="submit">回复</button></p>
+  </form>
+</section>

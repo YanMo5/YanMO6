@@ -1,0 +1,14 @@
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin: 0; padding: 0; background: #f6f8fa; color: #222; }
+header { background: #2a88ff; color: white; padding: 12px 20px; }
+header h1 { margin: 0; font-size: 20px; }
+header a { color: white; text-decoration: none; }
+main { padding: 20px; max-width: 900px; margin: 0 auto; }
+footer { padding: 12px 20px; text-align: center; color: #666; }
+.boards, .threads, .replies { list-style: none; padding: 0; }
+.boards li, .threads li { background: white; margin-bottom: 8px; padding: 12px; border-radius: 6px; }
+.post, .replies li { background: white; padding: 12px; border-radius: 6px; margin-bottom: 8px; }
+.meta { color: #666; font-size: 12px; margin-top: 6px; }
+.btn { display: inline-block; padding: 6px 10px; background: #2a88ff; color: white; text-decoration: none; border-radius: 4px; }
+input[type="text"], textarea { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+button { background: #2a88ff; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; }
